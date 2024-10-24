@@ -8,6 +8,11 @@ const UserSchema = mongoose.Schema(
             trim: true,
             maxlength: 50
         },
+        age: {
+            type: Number,
+            min: 1,
+            max: 100
+        },
         email: {
             type: String,
             unique: true,
@@ -23,24 +28,22 @@ const UserSchema = mongoose.Schema(
         password: {
             type: String,
             required: true,
-            minlength: 8,
             select: false,
-            validate: {
-                validator: function(v) {
-                  return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(v);
-                },
-                message: props => `Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one digit, and one special character.`
-            }
         },
         contact: {
             type: String,
             maxlength: 15
         },
-        role: {
+        roles: [{ 
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Role',
             required: true
-        }
+        }],
+        bio: { 
+            type: String,
+            maxlength: 250,
+            trim: true
+        },
     }, 
     { timestamps: true }
 );

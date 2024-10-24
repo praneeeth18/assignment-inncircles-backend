@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const RoleSchema = new mongoose.Schema(
     {
-        roleName: {
+        name: {
             type: String,
             required: true,
             unique: true,
@@ -10,9 +10,11 @@ const RoleSchema = new mongoose.Schema(
             maxlength: 50
         },
         permissions: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Permission'
-        }]
+            type: String,
+            enum: ['READ', 'WRITE', 'ADMIN'],
+            required: true,
+            default: 'READ'
+          }]
     }, 
     { timestamps: true }
 );

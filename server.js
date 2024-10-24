@@ -7,14 +7,23 @@ const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
 const PORT = process.env.PORT || 3500;
 
-//dbconnection
+// dbconnection
 connectDB();
 
 // Cross Origin Resource Sharing
 app.use(cors(corsOptions));
 
-//middleware
+// middleware
 app.use(express.json());
+
+// middleware for cookies
+// app.use(cookieParser());
+
+// routes
+app.use('/register', require('./routes/register.js'));
+app.use('/users', require('./routes/user.js'));
+app.use('/issues', require('./routes/issue.js'))
+app.use('/roles', require('./routes/role.js'));
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
