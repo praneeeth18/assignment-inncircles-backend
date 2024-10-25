@@ -28,7 +28,6 @@ const UserSchema = mongoose.Schema(
         password: {
             type: String,
             required: true,
-            select: false,
         },
         contact: {
             type: String,
@@ -44,6 +43,7 @@ const UserSchema = mongoose.Schema(
             maxlength: 250,
             trim: true
         },
+        refreshToken: String
     }, 
     { timestamps: true }
 );
