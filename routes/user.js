@@ -3,8 +3,9 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 
 router.get('/', userController.getAllUsers);
-router.put('/updateUserProfile/:id', userController.updateUserProfile)
-router.put('/updateUserRole/:id', userController.updateUser);
-router.delete('/deleteUser/:id', userController.deleteUser);
+router.get('/roles/:id', userController.getRoleByUserId);
+router.put('/updateProfile/:id', userController.updateUserProfile)
+router.put('/updateRole/:id', userController.updateUser);
+router.delete('/delete/:id', userController.deleteUser);
 
 module.exports = router;

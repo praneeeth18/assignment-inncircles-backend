@@ -24,15 +24,15 @@ app.use(express.json());
 app.use(cookieParser());
 
 // routes
-app.use('/register', require('./routes/register.js'));
-app.use('/login', require('./routes/auth.js'));
-app.use('/logout', require('./routes/logout.js'));
-app.use('/refresh', require('./routes/refresh.js'));
+app.use('/api/register', require('./routes/register.js'));
+app.use('/api/login', require('./routes/auth.js'));
+app.use('/api/logout', require('./routes/logout.js'));
+app.use('/api/refresh', require('./routes/refresh.js'));
 
 app.use(verifyJWT);
-app.use('/users', require('./routes/user.js'));
-app.use('/issues', require('./routes/issue.js'))
-app.use('/roles', require('./routes/role.js'));
+app.use('/api/users', require('./routes/user.js'));
+app.use('/api/issues', require('./routes/issue.js'))
+app.use('/api/roles', require('./routes/role.js'));
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');

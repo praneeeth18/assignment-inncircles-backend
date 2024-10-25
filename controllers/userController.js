@@ -9,6 +9,21 @@ const getAllUsers = async (req, res) => {
     }
 }
 
+const getRoleByUserId = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id).populate('roles');
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found!' });
+        }
+        
+        const roles = user.roles;
+        res.status(200).json({ roles });
+    } catch (error) {
+        return res.status(500).json({ message: `Something went wrong! ${error.message}`});
+    }
+}
+
 const deleteUser = async (req, res) => {
     try {
         const deletedUser = await User.findByIdAndDelete(req.params.id);
@@ -71,6 +86,7 @@ const updateUser = async (req, res) => {
 
 module.exports = {
     getAllUsers,
+    getRoleByUserId,
     deleteUser,
     updateUserProfile,
     updateUser
