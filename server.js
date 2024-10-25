@@ -12,6 +12,8 @@ const PORT = process.env.PORT || 3500;
 // dbconnection
 connectDB();
 
+// app.use(credentials);
+
 // Cross Origin Resource Sharing
 app.use(cors(corsOptions));
 
@@ -24,6 +26,7 @@ app.use(cookieParser());
 // routes
 app.use('/register', require('./routes/register.js'));
 app.use('/login', require('./routes/auth.js'));
+app.use('/logout', require('./routes/logout.js'));
 app.use('/refresh', require('./routes/refresh.js'));
 
 app.use(verifyJWT);
