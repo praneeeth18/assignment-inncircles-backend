@@ -3,7 +3,18 @@ const User = require('../models/User');
 const getAllUsers = async (req, res) => {
     try {
         const allUsers = await User.find().populate('roles');
-        res.status(200).json(allUsers);
+        const usersWithRoles = allUsers.map(user => ({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            contact: user.contact,
+            roles: user.roles.map(role => ({
+                _id: role._id,
+                name: role.name,
+                permissions: role.permissions
+            }))
+        }));
+        res.status(200).json(usersWithRoles);
     } catch (error) {
         return res.status(500).json({ message: `Something went wrong! ${error.message}`});
     }
@@ -82,7 +93,7 @@ const updateUser = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: `Something went wrong! ,${error.message}` });
     }
-}
+};
 
 module.exports = {
     getAllUsers,

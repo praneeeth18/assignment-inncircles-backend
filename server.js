@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // routes
-app.use('/api/register', require('./routes/register.js'));
+// app.use('/api/register', require('./routes/register.js'));
 app.use('/api/login', require('./routes/auth.js'));
 app.use('/api/logout', require('./routes/logout.js'));
 app.use('/api/refresh', require('./routes/refresh.js'));

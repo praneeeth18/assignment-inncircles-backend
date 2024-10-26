@@ -11,7 +11,7 @@ const RoleSchema = new mongoose.Schema(
         },
         permissions: [{
             type: String,
-            enum: ['READ', 'WRITE', 'ADMIN'],
+            enum: ['READ', 'WRITE', 'DELETE'],
             required: true,
             default: 'READ'
           }]
