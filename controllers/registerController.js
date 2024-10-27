@@ -10,7 +10,7 @@ const isPasswordValid = (password) => {
 
 const createNewUser = async (req, res) => {
     try {
-        const { name, email, password, roles, contact, bio } = req.body;
+        const { name, email, password, roles, contact, bio, age } = req.body;
         if (!name || !email || !password || !roles) {
             return res.status(400).json({ message: 'All fields (name, email, password, role) are required.' });
         }
@@ -37,7 +37,8 @@ const createNewUser = async (req, res) => {
                 password: hashedPassword,
                 contact,
                 roles,
-                bio
+                bio, 
+                age
             }
         );
 
