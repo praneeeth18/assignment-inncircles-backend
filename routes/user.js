@@ -9,7 +9,7 @@ router.get('/', authorize(['READ']), userController.getAllUsers);
 router.get('/:id', authorize(['READ']), userController.getUserById);
 router.get('/roles/:id', authorize(['READ']), userController.getRoleByUserId);
 router.put('/updateProfile/:id', authorize(['WRITE']), userController.updateUserProfile);
-router.put('/updateRole/:id', authorize(['WRITE']), userController.updateUser);
+router.put('/:id', authorize(['WRITE']), userController.updateUser);
 router.put('/updatePassword/:id', authorize(['WRITE']), userController.updatePassword)
 router.delete('/:id', authorize(['DELETE']), userController.deleteUser);
 
