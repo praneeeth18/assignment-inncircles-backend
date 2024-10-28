@@ -53,7 +53,7 @@ Follow these steps to set up the project locally:
 
    ```
 
-   ATLAS: You need paste the string here. For example:
+   ATLAS: You need to add the connection string here. For example:
 
    ```bash
    DATABASE_URI=mongodb+srv://USERNAME:PASSWORD.gdxi0.mongodb.net/COLLECTIONNAME?retryWrites=true&w=majority&appName=Cluster0
