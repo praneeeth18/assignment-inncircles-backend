@@ -56,3 +56,15 @@ Follow these steps to set up the project locally:
 
    **PORT=3500**
    If you want to change the port for the application to run. Please remember I have set my port numbers to 3500 in the services of Angular application.
+
+5. **Start the server**
+
+   ```bash
+   npm start
+   ```
+
+   **DEVELOPMENT**
+
+   ```bash
+   npm run dev
+   ```
