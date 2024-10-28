@@ -48,11 +48,6 @@ const deleteUser = async (req, res) => {
 }
 
 const updateUserProfile = async (req, res) => {
-    const { name, bio, contact, age } = req.body;
-
-    if (!name || !bio || !contact ) {
-        return res.status(400).json({ message: 'Name, bio, and contact details are required.'});
-    }
     try {
 
         const user = await User.findById(req.params.id);
@@ -61,10 +56,10 @@ const updateUserProfile = async (req, res) => {
             return res.status(404).json({ message: 'User not found!' });
         }
 
-        user.name = name;
-        user.bio = bio;
-        user.contact = contact;
-        user.age = age;
+        user.name = req.body.name;
+        user.bio = req.body.bio;
+        user.contact = req.body.contact;
+        user.age = req.body.age;
 
         await user.save();
 
@@ -75,10 +70,10 @@ const updateUserProfile = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-    const { name, contact, age, roles } = req.body;
+    const { name, roles } = req.body;
 
-    if (!name || !contact || !roles || roles.length === 0) {
-        return res.status(400).json({ message: 'Name, bio, contact, and roles are required.' });
+    if (!name || !roles || roles.length === 0) {
+        return res.status(400).json({ message: 'Name and roles are required.' });
     }
 
     try {
@@ -90,8 +85,8 @@ const updateUser = async (req, res) => {
 
         user.name = name;
         user.bio = req.body.bio;
-        user.contact = contact;
-        user.age = age;
+        user.contact = req.body.contact;
+        user.age = req.body.age;
         user.roles = roles; 
 
         await user.save();

@@ -6,7 +6,7 @@ const authorize = (requiredPermissions) => {
       const userId = req.user.id; 
       const user = await User.findById(userId).populate('roles');
       
-      if (user.roles.some(role => role.name === 'SystemAdmin')) {
+      if (user.roles.some(role => role.name === 'Admin')) {
         return next();
       }
 
