@@ -32,7 +32,7 @@ Follow these steps to set up the project locally:
 2. **Navigate to project directory:**
 
    ```bash
-   cd assignment-inncircles-frontend
+   cd assignment-inncircles-backend
 
    ```
 
