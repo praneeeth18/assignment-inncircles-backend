@@ -4,9 +4,11 @@ const jwt = require('jsonwebtoken');
 const handleRefreshToken = async (req, res) => {
     try {
         const cookies = req.cookies;
-        if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized: No refresh token provided' });
+        if (!cookies?.jwt) {
+            return res.status(401).json({ message: 'Unauthorized: No refresh token provided' });
+        }    
         const refreshToken = cookies.jwt;
-    
+
         const foundUser = await User.findOne({ refreshToken });
         if (!foundUser) return res.status(403).json({ message: 'Forbidden: Refresh token not recognized' });  
         
