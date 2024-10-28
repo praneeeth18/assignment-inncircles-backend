@@ -1,6 +1,6 @@
 # InnCircles Assignment
 
-This repository contains the backend application for the InnCircles Assignment built using Angular.
+This repository contains the backend application for the InnCircles Assignment built using Node.js.
 
 # System Admin Login
 
