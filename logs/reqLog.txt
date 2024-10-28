@@ -1,0 +1,17 @@
+20241028	12:55:09	a5fe03a1-1040-48cd-aea2-01642359d6c4	OPTIONS	http://localhost:4200	/api/login
+20241028	12:55:09	a82e1644-cff0-4b94-9f88-dd8f6993908a	POST	http://localhost:4200	/api/login
+20241028	12:55:09	19d294a7-c471-4407-9d06-c265cc8f8fed	OPTIONS	http://localhost:4200	/api/issues
+20241028	12:55:09	86529b1e-4899-410a-85ea-9d7d047a9034	GET	http://localhost:4200	/api/issues
+20241028	12:55:11	f14c089a-96a9-455a-9841-cd8a93dec562	OPTIONS	http://localhost:4200	/api/users
+20241028	12:55:11	59b364cd-8dc8-4baa-9001-44e8168bc0d7	GET	http://localhost:4200	/api/users
+20241028	12:55:12	ecf73ed5-2eb1-42dc-8f58-ec645e773e0f	OPTIONS	http://localhost:4200	/api/roles
+20241028	12:55:12	58b0df7a-1823-4721-8757-8d56eec98dd9	GET	http://localhost:4200	/api/roles
+20241028	12:55:12	46bf42b6-8fae-41ae-a226-c2f8197789d6	OPTIONS	http://localhost:4200	/api/users/671f32b24d8fd3d642440bc9
+20241028	12:55:12	44a67f42-cb3f-43dc-87db-dc6205dfeda2	GET	http://localhost:4200	/api/users/671f32b24d8fd3d642440bc9
+20241028	12:55:23	7b511030-5c6f-4913-8289-8ac8a1602ce4	OPTIONS	http://localhost:4200	/api/users/updateProfile/671f32b24d8fd3d642440bc9
+20241028	12:55:23	37c1a3db-6258-4eca-89f0-11229b25162f	PUT	http://localhost:4200	/api/users/updateProfile/671f32b24d8fd3d642440bc9
+20241028	12:55:27	7bb214a2-6aa5-49c5-a772-86994a775a71	OPTIONS	http://localhost:4200	/api/roles
+20241028	12:55:27	e9345d5a-c266-4923-8755-47e9c9c9ce6f	GET	http://localhost:4200	/api/roles
+20241028	12:56:14	d11c33a8-cc1a-433e-8c4e-7d1babc550d8	OPTIONS	http://localhost:4200	/api/issues
+20241028	12:56:14	84b0b895-de52-4e04-bf34-a7dba567dbd1	GET	http://localhost:4200	/api/issues
+20241028	12:56:25	7187e8cf-238b-4a4c-8cc5-d8b67b4df5cb	GET	http://localhost:4200	/api/logout

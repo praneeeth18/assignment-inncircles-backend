@@ -5,6 +5,8 @@ const connectDB = require('./config/dbConnection.js');
 const app = express();
 const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
+const { logger } = require('./middleware/logEvents');
+const errorHandler = require('./middleware/errorHandler');
 const verifyJWT = require('./middleware/verifyJWT.js');
 const cookieParser = require('cookie-parser');
 const credentials = require('./middleware/credentials');
@@ -13,6 +15,9 @@ const createAdminRoleAndUser = require('./seeds/systemAdmin.js');
 
 // dbconnection
 connectDB();
+
+// custom middleware logger
+app.use(logger);
 
 // Handle options credentials check - before CORS!
 // and fetch cookies credentials requirement
@@ -36,6 +41,8 @@ app.use(verifyJWT);
 app.use('/api/users', require('./routes/user.js'));
 app.use('/api/issues', require('./routes/issue.js'))
 app.use('/api/roles', require('./routes/role.js'));
+
+app.use(errorHandler);
 
 mongoose.connection.once('open',async () => {
     console.log('Connected to MongoDB');
